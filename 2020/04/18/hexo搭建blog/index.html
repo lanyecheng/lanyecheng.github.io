@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="蓝夜城__">
 <meta property="og:description" content="使用 hexo 搭建 blog 过程，window系统">
 <meta property="article:published_time" content="2020-04-18T06:36:04.000Z">
-<meta property="article:modified_time" content="2020-04-18T07:04:52.367Z">
+<meta property="article:modified_time" content="2020-04-18T07:52:56.248Z">
 <meta property="article:author" content="Lanyecheng">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -370,10 +370,10 @@
 <p>安装依赖包</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
-<p>一切准备继续，可用在D:\blog 执行一下命令</p>
+<p>一切准备继续，可用在 D:\blog 执行以下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>然后用浏览器访问 <a href="http://localhost:4000，">http://localhost:4000，</a> 此时，你应该看到了一个漂亮的博客了,不过是本地环境</p>
-<h3 id="发布到-Github-上"><a href="#发布到-Github-上" class="headerlink" title="发布到 Github 上"></a>发布到 Github 上</h3><p>登陆进入Github，New一个repository 创建，只需要填写 Repository name 即可。格式必须为 yourname.github.io</p>
+<p>然后用浏览器访问 <a href="http://localhost:4000，">http://localhost:4000，</a> 此时，你应该看到了一个漂亮的博客了,不过是本地环境的</p>
+<h3 id="发布到-Github-上"><a href="#发布到-Github-上" class="headerlink" title="发布到 Github 上"></a>发布到 Github 上</h3><p>登陆进入Github，点击 New repository 创建一个仓库，只需要填写 Repository name 即可。格式必须为 yourname.github.io</p>
 <p>修改站点配置文件 _config.yml</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    <span class="built_in">type</span>: git</span><br><span class="line">    repository: https://github.com/lanyecheng/lanyecheng.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
 
@@ -383,6 +383,61 @@
 
 <p>SSH 配置好后 ，执行以下命令部署到 Github 上</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="发表文章"><a href="#发表文章" class="headerlink" title="发表文章"></a>发表文章</h3><p>在你的 D:\blog 目录下，控制台执行如下命令,会在 _posts 文件夹创建一个新的 md 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"Hello World"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="hexo-主题及站点配置"><a href="#hexo-主题及站点配置" class="headerlink" title="hexo 主题及站点配置"></a>hexo 主题及站点配置</h3><h4 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h4><p>我这里选择 <a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT</a> 主题来记录下本站的配置过程</p>
+<p>安装主题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> your-hexo-site</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>启用主题，修改站点配置文件 _config.yml</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<p>设置语言，修改站点配置文件 _config.yml</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
+
+<p>到此，NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存，然后用浏览器访问 <a href="http://localhost:4000，查看主题是否生效，">http://localhost:4000，查看主题是否生效，</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>添加「标签」页面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> your-hexo-site</span><br><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>设置「标签」页面类型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line"><span class="built_in">type</span>: <span class="string">"tags"</span></span><br><span class="line">comments: <span class="literal">false</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加「分类」页面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> your-hexo-site</span><br><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>设置「分类」页面类型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2014-12-22 12:39:04</span><br><span class="line"><span class="built_in">type</span>: <span class="string">"categories"</span></span><br><span class="line">comments: <span class="literal">false</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>侧边栏显示 top，以及显示当前浏览进度，修改主题配置文件 _config.yml 以下两个地方为 true</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar (only for Pisces | Gemini).</span></span><br><span class="line">b2t: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line">scrollpercent: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>其他配置过程可参考 <a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT</a> 官方使用文档</p>
+<h4 id="第三方服务"><a href="#第三方服务" class="headerlink" title="第三方服务"></a>第三方服务</h4><h5 id="Algolia-搜索服务"><a href="#Algolia-搜索服务" class="headerlink" title="Algolia 搜索服务"></a>Algolia 搜索服务</h5><p>注册 <a href="https://www.algolia.com/" target="_blank" rel="noopener">Algolia</a><br>注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用</p>
+<p>点击 API Keys 进入页面，点击 All API Keys 选择右上方的 New API Key 新建一个用于管理 Index 的 API Key，Description 随意，Indices 添加上面创建的 Index，ACL 中只选择四种操作 addObject、deleteObject、deleteIndex、listIndexes，其它的默认就行，然后点击Create</p>
+<p>在站点根目录下安装插件 hexo-algolia</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-algolia</span><br></pre></td></tr></table></figure>
+
+<p>更新站点配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">algolia:</span><br><span class="line">  applicationID: <span class="string">'applicationID'</span></span><br><span class="line">  apiKey: <span class="string">'Search-Only API Key'</span></span><br><span class="line">  indexName: <span class="string">'indexName'</span></span><br><span class="line">  chunkSize: 5000</span><br></pre></td></tr></table></figure>
+
+<p>更新 NexT 主题配置文件，启用 algolia_search 模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Algolia Search</span></span><br><span class="line">algolia_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  hits:</span><br><span class="line">    per_page: 10</span><br><span class="line">  labels:</span><br><span class="line">    input_placeholder: Search <span class="keyword">for</span> Posts</span><br><span class="line">    hits_empty: <span class="string">"We didn't find any results for the search: <span class="variable">$&#123;query&#125;</span>"</span></span><br><span class="line">    hits_stats: <span class="string">"<span class="variable">$&#123;hits&#125;</span> results found in <span class="variable">$&#123;time&#125;</span> ms"</span></span><br></pre></td></tr></table></figure>
+
+<p>使用管理的 key 创建页面索引</p>
+<p>algolia 上还没有网站的索引数据，所以需要先创建。</p>
+<p>执行下列命令设置环境变量，（也可以在 ~/.bashrc 或 ~/.zshrc 文件中 export，这样就不需要每次都手动 export 了），导入用于管理 Index 的 Key。window 用户可手动设置环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=<span class="string">"填入刚才创建的用于管理 Index 的 Key"</span></span><br></pre></td></tr></table></figure>
+
+<p>新创建的 API Key 有管理 Index 的权限，所以必须用它才能创建或更新页面索引，执行一下命令，将索引数据上传到 Algolia 网站，它会保存在之前新建的 Index 中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
+
+<div class="note default"><p>注意，每次更新文章后记得执行 hexo algolia 更新索引 </p></div>
+
+
       
     </div>
     
@@ -547,7 +602,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">1.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布到-Github-上"><span class="nav-number">2.</span> <span class="nav-text">发布到 Github 上</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">1.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布到-Github-上"><span class="nav-number">2.</span> <span class="nav-text">发布到 Github 上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发表文章"><span class="nav-number">3.</span> <span class="nav-text">发表文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-主题及站点配置"><span class="nav-number">4.</span> <span class="nav-text">hexo 主题及站点配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置"><span class="nav-number">4.1.</span> <span class="nav-text">主题配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三方服务"><span class="nav-number">4.2.</span> <span class="nav-text">第三方服务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Algolia-搜索服务"><span class="nav-number">4.2.1.</span> <span class="nav-text">Algolia 搜索服务</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
