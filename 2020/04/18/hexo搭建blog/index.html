@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="蓝夜城__">
 <meta property="og:description" content="使用 hexo 搭建 blog 记录站点配置过程">
 <meta property="article:published_time" content="2020-04-18T06:36:04.000Z">
-<meta property="article:modified_time" content="2020-04-18T07:56:45.026Z">
+<meta property="article:modified_time" content="2020-04-18T08:11:37.009Z">
 <meta property="article:author" content="Lanyecheng">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -372,13 +372,13 @@
 
 <p>一切准备继续，可用在 D:\blog 执行以下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>然后用浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 此时，你应该看到了一个漂亮的博客了,不过是本地环境的</p>
+<p>然后用浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 此时，你应该看到了一个漂亮的博客了,不过是本地环境的</p>
 <h3 id="发布到-Github-上"><a href="#发布到-Github-上" class="headerlink" title="发布到 Github 上"></a>发布到 Github 上</h3><p>登陆进入Github，点击 New repository 创建一个仓库，只需要填写 Repository name 即可。格式必须为 yourname.github.io</p>
 <p>修改站点配置文件 _config.yml</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    <span class="built_in">type</span>: git</span><br><span class="line">    repository: https://github.com/lanyecheng/lanyecheng.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
 
 <p>如果是第一次使用 Github 需要配置 SSH ，这里不再介绍配置过程</p>
-<p>安装hexo-deployer-git这个模块</p>
+<p>安装 hexo-deployer-git 这个模块</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
 <p>SSH 配置好后 ，执行以下命令部署到 Github 上</p>
@@ -397,7 +397,7 @@
 <p>设置语言，修改站点配置文件 _config.yml</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
 
-<p>到此，NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存，然后用浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 查看主题是否生效，</p>
+<p>到此，NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存，然后用浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看主题是否生效，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
 <p>添加「标签」页面</p>
@@ -416,8 +416,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar (only for Pisces | Gemini).</span></span><br><span class="line">b2t: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line">scrollpercent: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>其他配置过程可参考 <a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT</a> 官方使用文档</p>
-<h4 id="第三方服务"><a href="#第三方服务" class="headerlink" title="第三方服务"></a>第三方服务</h4><h5 id="Algolia-搜索服务"><a href="#Algolia-搜索服务" class="headerlink" title="Algolia 搜索服务"></a>Algolia 搜索服务</h5><p>注册 <a href="https://www.algolia.com/" target="_blank" rel="noopener">Algolia</a><br>注册一个新账户。 可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用</p>
-<p>点击 API Keys 进入页面，点击 All API Keys 选择右上方的 New API Key 新建一个用于管理 Index 的 API Key，Description 随意，Indices 添加上面创建的 Index，ACL 中只选择四种操作 addObject、deleteObject、deleteIndex、listIndexes，其它的默认就行，然后点击Create</p>
+<h4 id="Algolia-搜索服务"><a href="#Algolia-搜索服务" class="headerlink" title="Algolia 搜索服务"></a>Algolia 搜索服务</h4><p>注册 <a href="https://www.algolia.com/" target="_blank" rel="noopener">Algolia</a><br>注册一个新账户。可以使用 GitHub 或者 Google 账户直接登录，注册后的 14 天内拥有所有功能（包括收费类别的）。之后若未续费会自动降级为免费账户，免费账户 总共有 10,000 条记录，每月有 100,000 的可以操作数。注册完成后，创建一个新的 Index，这个 Index 将在后面使用</p>
+<p>点击 API Keys 进入页面，点击 All API Keys 选择右上方的 New API Key 新建一个用于管理 Index 的 API Key，Description 随意，Indices 添加上面创建的 Index，ACL 中只选择四种操作 addObject、deleteObject、deleteIndex、listIndexes，其它的默认就行，然后点击 Create</p>
 <p>在站点根目录下安装插件 hexo-algolia</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-algolia</span><br></pre></td></tr></table></figure>
 
@@ -437,7 +437,21 @@
 
 <div class="note primary"><p>注意，每次更新文章后记得执行 hexo algolia 更新索引 </p></div>
 
+<h3 id="hexo-指令"><a href="#hexo-指令" class="headerlink" title="hexo 指令"></a>hexo 指令</h3><p>hexo 常见指令说明，<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="noopener">官方地址</a></p>
+<p>init 新建一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
 
+<p>清除缓存文件 (db.json) 和已生成的静态文件 (public)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>generate 生成静态文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<p>server 启动服务器。默认情况下，访问网址为： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>deploy 部署之前预先生成静态文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -602,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">1.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布到-Github-上"><span class="nav-number">2.</span> <span class="nav-text">发布到 Github 上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发表文章"><span class="nav-number">3.</span> <span class="nav-text">发表文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-主题及站点配置"><span class="nav-number">4.</span> <span class="nav-text">hexo 主题及站点配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置"><span class="nav-number">4.1.</span> <span class="nav-text">主题配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三方服务"><span class="nav-number">4.2.</span> <span class="nav-text">第三方服务</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Algolia-搜索服务"><span class="nav-number">4.2.1.</span> <span class="nav-text">Algolia 搜索服务</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">1.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布到-Github-上"><span class="nav-number">2.</span> <span class="nav-text">发布到 Github 上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发表文章"><span class="nav-number">3.</span> <span class="nav-text">发表文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-主题及站点配置"><span class="nav-number">4.</span> <span class="nav-text">hexo 主题及站点配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置"><span class="nav-number">4.1.</span> <span class="nav-text">主题配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Algolia-搜索服务"><span class="nav-number">4.2.</span> <span class="nav-text">Algolia 搜索服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-指令"><span class="nav-number">5.</span> <span class="nav-text">hexo 指令</span></a></li></ol></div>
             
 
           </div>
