@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="使用 hexo 搭建 blog 过程，window系统">
+<meta name="description" content="使用 hexo 搭建 blog 记录站点配置过程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo搭建blog">
 <meta property="og:url" content="https://lanyecheng.github.io/2020/04/18/hexo%E6%90%AD%E5%BB%BAblog/index.html">
 <meta property="og:site_name" content="蓝夜城__">
-<meta property="og:description" content="使用 hexo 搭建 blog 过程，window系统">
+<meta property="og:description" content="使用 hexo 搭建 blog 记录站点配置过程">
 <meta property="article:published_time" content="2020-04-18T06:36:04.000Z">
-<meta property="article:modified_time" content="2020-04-18T07:52:56.248Z">
+<meta property="article:modified_time" content="2020-04-18T07:56:45.026Z">
 <meta property="article:author" content="Lanyecheng">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -357,7 +357,7 @@
       
 
       
-        <p>使用 hexo 搭建 blog 过程，window系统</p>
+        <p>使用 hexo 搭建 blog 记录站点配置过程</p>
 <a id="more"></a>
 <h3 id="安装依赖软件"><a href="#安装依赖软件" class="headerlink" title="安装依赖软件"></a>安装依赖软件</h3><p>安装 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></p>
 <p>安装 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git客户端</a></p>
@@ -372,7 +372,7 @@
 
 <p>一切准备继续，可用在 D:\blog 执行以下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>然后用浏览器访问 <a href="http://localhost:4000，">http://localhost:4000，</a> 此时，你应该看到了一个漂亮的博客了,不过是本地环境的</p>
+<p>然后用浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 此时，你应该看到了一个漂亮的博客了,不过是本地环境的</p>
 <h3 id="发布到-Github-上"><a href="#发布到-Github-上" class="headerlink" title="发布到 Github 上"></a>发布到 Github 上</h3><p>登陆进入Github，点击 New repository 创建一个仓库，只需要填写 Repository name 即可。格式必须为 yourname.github.io</p>
 <p>修改站点配置文件 _config.yml</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    <span class="built_in">type</span>: git</span><br><span class="line">    repository: https://github.com/lanyecheng/lanyecheng.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
@@ -397,7 +397,7 @@
 <p>设置语言，修改站点配置文件 _config.yml</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
 
-<p>到此，NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存，然后用浏览器访问 <a href="http://localhost:4000，查看主题是否生效，">http://localhost:4000，查看主题是否生效，</a></p>
+<p>到此，NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 hexo clean 来清除 Hexo 的缓存，然后用浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 查看主题是否生效，</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
 <p>添加「标签」页面</p>
@@ -435,7 +435,7 @@
 <p>新创建的 API Key 有管理 Index 的权限，所以必须用它才能创建或更新页面索引，执行一下命令，将索引数据上传到 Algolia 网站，它会保存在之前新建的 Index 中</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
 
-<div class="note default"><p>注意，每次更新文章后记得执行 hexo algolia 更新索引 </p></div>
+<div class="note primary"><p>注意，每次更新文章后记得执行 hexo algolia 更新索引 </p></div>
 
 
       
