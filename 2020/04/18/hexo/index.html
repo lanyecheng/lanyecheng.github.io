@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="蓝夜城__">
 <meta property="og:description" content="使用 hexo 搭建 blog 记录站点配置过程">
 <meta property="article:published_time" content="2020-04-18T06:36:04.000Z">
-<meta property="article:modified_time" content="2020-04-18T14:28:54.540Z">
+<meta property="article:modified_time" content="2020-04-18T14:50:59.073Z">
 <meta property="article:author" content="蓝夜城__">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -330,6 +330,15 @@
           </span>
 
           
+            <span class="post-updated">
+              &nbsp; | &nbsp; 更新于
+              <time itemprop="dateUpdated" datetime="2020-04-18T22:50:59+08:00" content="2020-04-18">
+                2020-04-18
+              </time>
+            </span>
+          
+
+          
 
           
             
@@ -351,7 +360,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.4k
                 </span>
               
 
@@ -367,7 +376,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  6
                 </span>
               
             </div>
@@ -463,7 +472,7 @@
 <p>执行下列命令设置环境变量，（也可以在 ~/.bashrc 或 ~/.zshrc 文件中 export，这样就不需要每次都手动 export 了），导入用于管理 Index 的 Key。window 用户可手动设置环境变量</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=<span class="string">"填入刚才创建的用于管理 Index 的 Key"</span></span><br></pre></td></tr></table></figure>
 
-<p>新创建的 API Key 有管理 Index 的权限，所以必须用它才能创建或更新页面索引，执行一下命令，将索引数据上传到 Algolia 网站，它会保存在之前新建的 Index 中</p>
+<p>新创建的 API Key 有管理 Index 的权限，所以必须用它才能创建或更新页面索引，执行以下命令，将索引数据上传到 Algolia 网站，它会保存在之前新建的 Index 中</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo algolia</span><br></pre></td></tr></table></figure>
 
 <div class="note primary"><p>注意，每次更新文章后记得执行 hexo algolia 更新索引 </p></div>
@@ -472,6 +481,18 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Post wordcount display settings</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/willin/hexo-wordcount</span></span><br><span class="line">post_wordcount:</span><br><span class="line">  item_text: <span class="literal">true</span></span><br><span class="line">  wordcount: <span class="literal">true</span></span><br><span class="line">  min2read: <span class="literal">true</span></span><br><span class="line">  totalcount: <span class="literal">false</span></span><br><span class="line">  separated_meta: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="添加文章更新时间"><a href="#添加文章更新时间" class="headerlink" title="添加文章更新时间"></a>添加文章更新时间</h4><p>修改主题配置 /themes/next/layout/_macro/post.swig 文件，在 <code>&lt;span class=&quot;post-time&quot;&gt;...&lt;/span&gt;</code> 标签后添加</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;%<span class="keyword">if</span> post.updated <span class="keyword">and</span> post.updated &gt; post.date%&#125;</span><br><span class="line">  &lt;span class="post-updated"&gt;</span><br><span class="line">    &amp;nbsp; | &amp;nbsp; &#123;&#123; __(<span class="string">'post.updated'</span>) &#125;&#125;</span><br><span class="line">    &lt;time itemprop=<span class="string">"dateUpdated"</span> datetime=<span class="string">"&#123;&#123; moment(post.updated).format() &#125;&#125;"</span> content=<span class="string">"&#123;&#123; date(post.updated, config.date_format) &#125;&#125;"</span>&gt;</span><br><span class="line">      &#123;&#123; date(post.updated, config.date_format) &#125;&#125;</span><br><span class="line">    &lt;/time&gt;</span><br><span class="line">  &lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在语言配置 /themes/next/languages/zh_Hans.yml 文件，添加以下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">post:</span><br><span class="line">  updated: 更新于</span><br></pre></td></tr></table></figure>
+
+<p>修改主题配置文件 /themes/next/_config.yml，增加一行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display_updated: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>写文章的时候可以直接在文章开头设置更新时间，没有这参数的话将会显示 md 文件的修改日期</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">updated: 2018-01-01 12:00:00</span><br></pre></td></tr></table></figure>
 
 <h3 id="hexo-指令"><a href="#hexo-指令" class="headerlink" title="hexo 指令"></a>hexo 指令</h3><p>hexo 常见指令说明，<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="noopener">官方地址</a></p>
 <p>init 新建一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站</p>
@@ -652,7 +673,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">1.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布到-Github-上"><span class="nav-number">2.</span> <span class="nav-text">发布到 Github 上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发表文章"><span class="nav-number">3.</span> <span class="nav-text">发表文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-主题及站点配置"><span class="nav-number">4.</span> <span class="nav-text">hexo 主题及站点配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置"><span class="nav-number">4.1.</span> <span class="nav-text">主题配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Algolia-搜索服务"><span class="nav-number">4.2.</span> <span class="nav-text">Algolia 搜索服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示字数统计，阅读时常"><span class="nav-number">4.3.</span> <span class="nav-text">显示字数统计，阅读时常</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-指令"><span class="nav-number">5.</span> <span class="nav-text">hexo 指令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">1.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布到-Github-上"><span class="nav-number">2.</span> <span class="nav-text">发布到 Github 上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发表文章"><span class="nav-number">3.</span> <span class="nav-text">发表文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-主题及站点配置"><span class="nav-number">4.</span> <span class="nav-text">hexo 主题及站点配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置"><span class="nav-number">4.1.</span> <span class="nav-text">主题配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Algolia-搜索服务"><span class="nav-number">4.2.</span> <span class="nav-text">Algolia 搜索服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示字数统计，阅读时常"><span class="nav-number">4.3.</span> <span class="nav-text">显示字数统计，阅读时常</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加文章更新时间"><span class="nav-number">4.4.</span> <span class="nav-text">添加文章更新时间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-指令"><span class="nav-number">5.</span> <span class="nav-text">hexo 指令</span></a></li></ol></div>
             
 
           </div>
