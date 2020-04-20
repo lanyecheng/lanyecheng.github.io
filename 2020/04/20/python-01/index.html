@@ -79,12 +79,14 @@
 
 
 
-<meta name="description" content="鱼丸是只猫">
-<meta property="og:type" content="website">
-<meta property="og:title" content="蓝夜城__">
-<meta property="og:url" content="https://lanyecheng.github.io/index.html">
+<meta name="description" content="记录 Python 学习过程，第一部分内容，变量、关键字、数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="变量、关键字、数据类型">
+<meta property="og:url" content="https://lanyecheng.github.io/2020/04/20/python-01/index.html">
 <meta property="og:site_name" content="蓝夜城__">
-<meta property="og:description" content="鱼丸是只猫">
+<meta property="og:description" content="记录 Python 学习过程，第一部分内容，变量、关键字、数据类型">
+<meta property="article:published_time" content="2020-04-20T13:07:16.000Z">
+<meta property="article:modified_time" content="2020-04-20T14:33:24.777Z">
 <meta property="article:author" content="蓝夜城__">
 <meta name="twitter:card" content="summary">
 
@@ -116,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://lanyecheng.github.io/"/>
+  <link rel="canonical" href="https://lanyecheng.github.io/2020/04/20/python-01/"/>
 
 
 
 
 
-  <title>蓝夜城__</title>
+  <title>变量、关键字、数据类型 | 蓝夜城__</title>
   
 
 
@@ -141,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -273,9 +274,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -305,9 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/20/python-01/" itemprop="url">变量、关键字、数据类型</a></h1>
+          <h1 class="post-title" itemprop="name headline">变量、关键字、数据类型</h1>
         
 
         <div class="post-meta">
@@ -419,16 +418,24 @@
       
 
       
-        
-          <p>记录 Python 学习过程，第一部分内容，变量、关键字、数据类型</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/04/20/python-01/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>记录 Python 学习过程，第一部分内容，变量、关键字、数据类型</p>
+<a id="more"></a>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>在 Python 中使用变量时，需要遵守一些规则和指南。违反这些规则将引发错误，而指南旨在让你编写的代码更容易阅读和理解。请务必牢记下述有关变量的规则。</p>
+<ol>
+<li>变量名只能包含字母、数字和下划线。变量名可以字母或下划线打头，但不能以数字打头，例如，可将变量命名为 message_1 ，但不能将其命名为 1_message 。</li>
+<li>变量名不能包含空格，但可使用下划线来分隔其中的单词。例如，变量名 greeting_message 可行，但变量名 greeting message 会引发错误。</li>
+<li>不要将 Python 关键字和函数名用作变量名，即不要使用 Python 保留用于特殊用途的单词</li>
+<li>变量名应既简短又具有描述性。例如， name 比 n 好， student_name 比 s_n 好， name_length 比 length_of_persons_name 好。</li>
+<li>慎用小写字母 l 和大写字母 O ，因为它们可能被人错看成数字 1 和 0 。</li>
+<li>要创建良好的变量名，需要经过一定的实践，在程序复杂而有趣时尤其如此。随着你编写的程序越来越多，并开始阅读别人编写的代码，将越来越善于创建有意义的变量名。<br>注意，就目前而言，应使用小写的 Python 变量名。在变量名中使用大写字母虽然不会导致错误，但避免使用大写字母是个不错的主意</li>
+</ol>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [1]: import keyword</span><br><span class="line"></span><br><span class="line">In [2]: <span class="string">', '</span>.join(keyword.kwlist)</span><br><span class="line">Out[2]: <span class="string">'False, None, True, and, as, assert, async, await, break, class, continue, def, del, elif, else, except, finally, for, from, global, if, import, in, is, lambda, nonlocal, not, or, pass, raise, return, try, while, with, yield'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [3]: name = <span class="string">'lanyecheng'</span></span><br><span class="line"></span><br><span class="line">In [4]: <span class="built_in">print</span>(name)</span><br><span class="line">lanyecheng</span><br></pre></td></tr></table></figure>
+
+<h4 id="title-upper-lower"><a href="#title-upper-lower" class="headerlink" title="title/upper/lower"></a>title/upper/lower</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [5]: name = <span class="string">'lan yecheng'</span></span><br><span class="line"></span><br><span class="line">In [6]: <span class="built_in">print</span>(name.title())</span><br><span class="line">Lan Yecheng</span><br><span class="line"></span><br><span class="line">In [7]: <span class="built_in">print</span>(name.upper())</span><br><span class="line">LAN YECHENG</span><br><span class="line"></span><br><span class="line">In [8]: <span class="built_in">print</span>(name.lower())</span><br><span class="line">lan yecheng</span><br></pre></td></tr></table></figure>
+
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>
       
     </div>
     
@@ -445,176 +452,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lanyecheng.github.io/2020/04/18/hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="蓝夜城__">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="蓝夜城__">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/18/hexo/" itemprop="url">hexo搭建blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-18T14:36:04+08:00">
-                2020-04-18
-              </time>
+              <a href="/2020/04/18/hexo/" rel="next" title="hexo搭建blog">
+                <i class="fa fa-chevron-left"></i> hexo搭建blog
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-updated">
-              &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2020-04-20T21:04:41+08:00" content="2020-04-20">
-                2020-04-20
-              </time>
-            </span>
-          
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.4k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>使用 hexo 搭建 blog 记录站点配置过程，部分内容摘自网络</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/04/18/hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -624,10 +483,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -635,6 +495,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -655,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -720,6 +593,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字"><span class="nav-number">2.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#title-upper-lower"><span class="nav-number">3.1.</span> <span class="nav-text">title&#x2F;upper&#x2F;lower</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">3.2.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -862,6 +751,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
