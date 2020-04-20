@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="蓝夜城__">
 <meta property="og:description" content="记录 Python 学习过程，第一部分内容: 变量、关键字、数据类型，部分内容摘抄与网络，这里只做摘录总结">
 <meta property="article:published_time" content="2020-04-20T13:07:16.000Z">
-<meta property="article:modified_time" content="2020-04-20T15:59:40.090Z">
+<meta property="article:modified_time" content="2020-04-20T16:06:58.771Z">
 <meta property="article:author" content="蓝夜城__">
 <meta name="twitter:card" content="summary">
 
@@ -331,8 +331,8 @@
           
             <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2020-04-20T23:59:40+08:00" content="2020-04-20">
-                2020-04-20
+              <time itemprop="dateUpdated" datetime="2020-04-21T00:06:58+08:00" content="2020-04-21">
+                2020-04-21
               </time>
             </span>
           
@@ -441,10 +441,10 @@
 
 <h4 id="split-rsplit"><a href="#split-rsplit" class="headerlink" title="split/rsplit"></a>split/rsplit</h4><ol>
 <li>方法 split() 以空格为分隔符将字符串分拆成多个部分，并将这些部分都存储到一个列表中</li>
-<li>rsplit() 方法通过指定分隔符对字符串进行分割并返回一个列表，默认分隔符为所有空字符，包括空格、换行(\n)、制表符(\t)等。类似于 split() 方法，只不过是从字符串最后面开始分割<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [12]: tt = <span class="string">'Alice in Wonderland'</span></span><br><span class="line"></span><br><span class="line">In [13]: tt.split()</span><br><span class="line">Out[13]: [<span class="string">'Alice'</span>, <span class="string">'in'</span>, <span class="string">'Wonderland'</span>]</span><br><span class="line"></span><br><span class="line">In [14]: <span class="string">'a,b,c,d'</span>.split(<span class="string">','</span>)</span><br><span class="line">Out[14]: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</span><br><span class="line"></span><br><span class="line">In [15]: <span class="string">'a b c d'</span>.split(None, 1)</span><br><span class="line">Out[15]: [<span class="string">'a'</span>, <span class="string">'b c d'</span>]</span><br><span class="line"></span><br><span class="line">In [16]: <span class="string">'a b c d'</span>.rsplit(None, 1)</span><br><span class="line">Out[16]: [<span class="string">'a b c'</span>, <span class="string">'d'</span>]</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>rsplit() 方法通过指定分隔符对字符串进行分割并返回一个列表，默认分隔符为所有空字符，包括空格、换行(\n)、制表符(\t)等。类似于 split() 方法，只不过是从字符串最后面开始分割</li>
 </ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [12]: tt = <span class="string">'Alice in Wonderland'</span></span><br><span class="line"></span><br><span class="line">In [13]: tt.split()</span><br><span class="line">Out[13]: [<span class="string">'Alice'</span>, <span class="string">'in'</span>, <span class="string">'Wonderland'</span>]</span><br><span class="line"></span><br><span class="line">In [14]: <span class="string">'a,b,c,d'</span>.split(<span class="string">','</span>)</span><br><span class="line">Out[14]: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</span><br><span class="line"></span><br><span class="line">In [15]: <span class="string">'a b c d'</span>.split(None, 1)</span><br><span class="line">Out[15]: [<span class="string">'a'</span>, <span class="string">'b c d'</span>]</span><br><span class="line"></span><br><span class="line">In [16]: <span class="string">'a b c d'</span>.rsplit(None, 1)</span><br><span class="line">Out[16]: [<span class="string">'a b c'</span>, <span class="string">'d'</span>]</span><br></pre></td></tr></table></figure>
+
 <h4 id="strip-lstrip-rstrip"><a href="#strip-lstrip-rstrip" class="headerlink" title="strip/lstrip/rstrip"></a>strip/lstrip/rstrip</h4><p>删除空白</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [17]: <span class="string">'a b c d'</span>.rsplit(None, 1)</span><br><span class="line">Out[17]: [<span class="string">'a b c'</span>, <span class="string">'d'</span>]</span><br><span class="line"></span><br><span class="line">In [18]: <span class="string">' abc '</span>.strip()</span><br><span class="line">Out[18]: <span class="string">'abc'</span></span><br><span class="line"></span><br><span class="line">In [19]: <span class="string">' abc '</span>.lstrip()</span><br><span class="line">Out[19]: <span class="string">'abc '</span></span><br><span class="line"></span><br><span class="line">In [20]: <span class="string">' abc '</span>.rstrip()</span><br><span class="line">Out[20]: <span class="string">' abc'</span></span><br></pre></td></tr></table></figure>
 
@@ -456,10 +456,10 @@
 <li>rpartition() 方法类似于 partition() 方法，只是该方法是从目标字符串的末尾也就是右边开始搜索分割符</li>
 </ol>
 <ul>
-<li>返回一个3元的元组，第一个为分隔符左边的子串，第二个为分隔符本身，第三个为分隔符右边的子串<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [23]: str = <span class="string">'www.baidu.com'</span></span><br><span class="line"></span><br><span class="line">In [24]: <span class="built_in">print</span>(str.partition(<span class="string">'.'</span>))</span><br><span class="line">(<span class="string">'www'</span>, <span class="string">'.'</span>, <span class="string">'baidu.com'</span>)</span><br><span class="line"></span><br><span class="line">In [25]: <span class="built_in">print</span>(str.rpartition(<span class="string">'.'</span>))</span><br><span class="line">(<span class="string">'www.baidu'</span>, <span class="string">'.'</span>, <span class="string">'com'</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>返回一个3元的元组，第一个为分隔符左边的子串，第二个为分隔符本身，第三个为分隔符右边的子串</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [23]: str = <span class="string">'www.baidu.com'</span></span><br><span class="line"></span><br><span class="line">In [24]: <span class="built_in">print</span>(str.partition(<span class="string">'.'</span>))</span><br><span class="line">(<span class="string">'www'</span>, <span class="string">'.'</span>, <span class="string">'baidu.com'</span>)</span><br><span class="line"></span><br><span class="line">In [25]: <span class="built_in">print</span>(str.rpartition(<span class="string">'.'</span>))</span><br><span class="line">(<span class="string">'www.baidu'</span>, <span class="string">'.'</span>, <span class="string">'com'</span>)</span><br></pre></td></tr></table></figure>
+
 <h4 id="join"><a href="#join" class="headerlink" title="join"></a>join</h4><p>Python join() 方法用于将序列中的元素以指定的字符连接生成一个新的字符串。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [26]: seq1 = [<span class="string">'hello'</span>,<span class="string">'good'</span>,<span class="string">'boy'</span>,<span class="string">'doiido'</span>]</span><br><span class="line"></span><br><span class="line">In [27]: <span class="built_in">print</span>(<span class="string">' '</span>.join(seq1))</span><br><span class="line">hello good boy doiido</span><br><span class="line"></span><br><span class="line">In [28]: <span class="built_in">print</span>(<span class="string">'-'</span>.join(seq1))</span><br><span class="line">hello-good-boy-doiido</span><br></pre></td></tr></table></figure>
 
@@ -467,38 +467,49 @@
 <ul>
 <li>sub – 搜索的子字符串</li>
 <li>start – 字符串开始搜索的位置。默认为第一个字符,第一个字符索引值为0。</li>
-<li>end – 字符串中结束搜索的位置。字符中第一个字符的索引为 0。默认为字符串的最后一个位置<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [29]: tup = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line">In [30]: tup.count(<span class="string">'a'</span>)</span><br><span class="line">Out[30]: 2</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>end – 字符串中结束搜索的位置。字符中第一个字符的索引为 0。默认为字符串的最后一个位置</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [29]: tup = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line">In [30]: tup.count(<span class="string">'a'</span>)</span><br><span class="line">Out[30]: 2</span><br></pre></td></tr></table></figure>
+
 <h4 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [1]: first_name = <span class="string">'ada'</span></span><br><span class="line"></span><br><span class="line">In [2]: last_name = <span class="string">'lovelace'</span></span><br><span class="line"></span><br><span class="line">In [3]: full_name = first_name + <span class="string">' '</span> + last_name</span><br><span class="line"></span><br><span class="line">In [4]: message = <span class="string">'Hello, '</span> + full_name.title() + <span class="string">'!'</span></span><br><span class="line"></span><br><span class="line">In [5]: <span class="built_in">print</span>(message)</span><br><span class="line">Hello, Ada Lovelace!</span><br></pre></td></tr></table></figure>
 
 <h4 id="制表符"><a href="#制表符" class="headerlink" title="制表符"></a>制表符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">In [31]: <span class="built_in">print</span>(<span class="string">'Python'</span>)</span><br><span class="line">Python</span><br><span class="line"></span><br><span class="line">In [32]: <span class="built_in">print</span>(<span class="string">'\tPython'</span>)</span><br><span class="line">        Python</span><br><span class="line"></span><br><span class="line">In [33]: <span class="built_in">print</span>(<span class="string">'Languages:\nPython\nC\nJavaScript'</span>)</span><br><span class="line">Languages:</span><br><span class="line">Python</span><br><span class="line">C</span><br><span class="line">JavaScript</span><br><span class="line"></span><br><span class="line">In [34]: <span class="built_in">print</span>(<span class="string">'Languages:\n\tPython\n\tC\n\tJavaScript'</span>)</span><br><span class="line">Languages:</span><br><span class="line">        Python</span><br><span class="line">        C</span><br><span class="line">        JavaScript</span><br></pre></td></tr></table></figure>
 
 <h4 id="format"><a href="#format" class="headerlink" title="format"></a>format</h4><ol>
-<li><p>通过位置填充</p>
+<li>通过位置填充</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [35]: <span class="string">'&#123;&#125; &#123;&#125;'</span>.format(<span class="string">'hello'</span>, <span class="string">'wordl'</span>)</span><br><span class="line">Out[35]: <span class="string">'hello wordl'</span></span><br><span class="line"></span><br><span class="line">In [36]: <span class="string">'&#123;&#125; &#123;&#125;'</span>.format(<span class="string">'hello'</span>, <span class="string">'world'</span>)</span><br><span class="line">Out[36]: <span class="string">'hello world'</span></span><br><span class="line"></span><br><span class="line">In [37]: <span class="string">'&#123;0&#125; &#123;1&#125;'</span>.format(<span class="string">'hello'</span>, <span class="string">'world'</span>)</span><br><span class="line">Out[37]: <span class="string">'hello world'</span></span><br><span class="line"></span><br><span class="line">In [38]: <span class="string">'&#123;0&#125; &#123;1&#125; &#123;0&#125;'</span>.format(<span class="string">'hello'</span>, <span class="string">'world'</span>)</span><br><span class="line">Out[38]: <span class="string">'hello world hello'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过 Key 来填充</p>
+
+<ol start="2">
+<li>通过 Key 来填充</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [39]: <span class="built_in">print</span>(<span class="string">'名字：&#123;name&#125;, 地址：&#123;url&#125;'</span>.format(name=<span class="string">'lan'</span>, url=<span class="string">'www.baidu.com'</span>))</span><br><span class="line">名字：lan, 地址：www.baidu.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过下标来填充</p>
+
+<ol start="3">
+<li>通过下标来填充</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [40]: names = [<span class="string">'Kevin'</span>, <span class="string">'Tom'</span>]</span><br><span class="line"></span><br><span class="line">In [41]: <span class="built_in">print</span>(<span class="string">'hello &#123;names[0]&#125; i am &#123;names[1]&#125;'</span>.format(names=names))</span><br><span class="line">hello Kevin i am Tom</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过字典的 Key</p>
+
+<ol start="4">
+<li>通过字典的 Key</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [44]: names = &#123;<span class="string">'name1'</span>:<span class="string">'Kevin'</span>, <span class="string">'name2'</span>:<span class="string">'Tom'</span>&#125;</span><br><span class="line"></span><br><span class="line">In [45]: <span class="built_in">print</span>(<span class="string">'hello &#123;names[name1]&#125; i am &#123;names[name2]&#125;'</span>.format(names=names))</span><br><span class="line">hello Kevin i am Tom</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过对象的属性</p>
+
+<ol start="5">
+<li>通过对象的属性</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [46]: class Names:</span><br><span class="line">    ...:     name1 = <span class="string">'kevin'</span></span><br><span class="line">    ...:     name2 = <span class="string">'Tom'</span></span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [47]: <span class="built_in">print</span>(<span class="string">'hello &#123;names.name1&#125; i an &#123;names.name2&#125;'</span>.format(names=Names))</span><br><span class="line">hello kevin i an Tom</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过字典设置参数</p>
+
+<ol start="6">
+<li>通过字典设置参数</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [48]: site = &#123;<span class="string">"name"</span>: <span class="string">"菜鸟教程"</span>, <span class="string">"url"</span>: <span class="string">"www.runoob.com"</span>&#125;</span><br><span class="line"></span><br><span class="line">In [49]: <span class="built_in">print</span>(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(**site))</span><br><span class="line">网站名：菜鸟教程, 地址 www.runoob.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过列表索引设置参数</p>
+
+<ol start="7">
+<li>通过列表索引设置参数</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [51]: my_list = [<span class="string">'菜鸟教程'</span>, <span class="string">'www.runoob.com'</span>]</span><br><span class="line"></span><br><span class="line">In [52]: <span class="built_in">print</span>(<span class="string">"网站名：&#123;0[0]&#125;, 地址 &#123;0[1]&#125;"</span>.format(my_list))  <span class="comment"># "0" 是必须的</span></span><br><span class="line">网站名：菜鸟教程, 地址 www.runoob.com</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
 <h4 id="转义字符串"><a href="#转义字符串" class="headerlink" title="转义字符串"></a>转义字符串</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [39]: name = <span class="string">"lan\'yecheng"</span></span><br><span class="line"></span><br><span class="line">In [40]: <span class="built_in">print</span>(name)</span><br><span class="line">lan<span class="string">'yecheng</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="f-string"><a href="#f-string" class="headerlink" title="f-string"></a>f-string</h4><p>f-string 是 python3.6 之后版本添加的，称之为字面量格式化字符串，是新的格式化字符串的语法</p>
