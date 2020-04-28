@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="记录 Python 学习过程，第一部分内容: 变量、关键字、数据类型，部分内容摘抄与网络，这里只做摘录总结">
+<meta name="description" content="记录 Python 学习过程，01内容: 变量、关键字、数据类型，部分内容摘抄于网络，这里只是学习摘录总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 变量、关键字、数据类型">
 <meta property="og:url" content="https://lanyecheng.github.io/2020/04/20/python-01/index.html">
 <meta property="og:site_name" content="蓝夜城__">
-<meta property="og:description" content="记录 Python 学习过程，第一部分内容: 变量、关键字、数据类型，部分内容摘抄与网络，这里只做摘录总结">
+<meta property="og:description" content="记录 Python 学习过程，01内容: 变量、关键字、数据类型，部分内容摘抄于网络，这里只是学习摘录总结">
 <meta property="article:published_time" content="2020-04-20T13:07:16.000Z">
-<meta property="article:modified_time" content="2020-04-27T13:36:35.102Z">
+<meta property="article:modified_time" content="2020-04-27T14:23:34.904Z">
 <meta property="article:author" content="蓝夜城__">
 <meta name="twitter:card" content="summary">
 
@@ -331,7 +331,7 @@
           
             <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2020-04-27T21:36:35+08:00" content="2020-04-27">
+              <time itemprop="dateUpdated" datetime="2020-04-27T22:23:34+08:00" content="2020-04-27">
                 2020-04-27
               </time>
             </span>
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.1k
+                  2.4k
                 </span>
               
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  10
                 </span>
               
             </div>
@@ -418,9 +418,9 @@
       
 
       
-        <p>记录 Python 学习过程，第一部分内容: 变量、关键字、数据类型，部分内容摘抄与网络，这里只做摘录总结</p>
+        <p>记录 Python 学习过程，01内容: 变量、关键字、数据类型，部分内容摘抄于网络，这里只是学习摘录总结</p>
 <a id="more"></a>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>在 Python 中使用变量时，需要遵守一些规则和指南。违反这些规则将引发错误，而指南旨在让你编写的代码更容易阅读和理解。请务必牢记下述有关变量的规则。</p>
+<h3 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h3><p>在 Python 中使用变量时，需要遵守一些规则和指南。违反这些规则将引发错误，而指南旨在让你编写的代码更容易阅读和理解。请务必牢记下述有关变量的规则。</p>
 <ol>
 <li>变量名只能包含字母、数字和下划线。变量名可以字母或下划线打头，但不能以数字打头，例如，可将变量命名为 message_1 ，但不能将其命名为 1_message 。</li>
 <li>变量名不能包含空格，但可使用下划线来分隔其中的单词。例如，变量名 greeting_message 可行，但变量名 greeting message 会引发错误。</li>
@@ -429,6 +429,20 @@
 <li>慎用小写字母 l 和大写字母 O ，因为它们可能被人错看成数字 1 和 0 。</li>
 <li>要创建良好的变量名，需要经过一定的实践，在程序复杂而有趣时尤其如此。随着你编写的程序越来越多，并开始阅读别人编写的代码，将越来越善于创建有意义的变量名。<br>注意，就目前而言，应使用小写的 Python 变量名。在变量名中使用大写字母虽然不会导致错误，但避免使用大写字母是个不错的主意</li>
 </ol>
+<h4 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">In [10]: a = 45</span><br><span class="line"></span><br><span class="line">In [11]: b = 12</span><br><span class="line"></span><br><span class="line">In [12]: <span class="built_in">print</span>(a + b)</span><br><span class="line">57</span><br><span class="line"></span><br><span class="line">In [13]: <span class="built_in">print</span>(a - b)</span><br><span class="line">33</span><br><span class="line"></span><br><span class="line">In [14]: <span class="built_in">print</span>(a * b)</span><br><span class="line">540</span><br><span class="line"></span><br><span class="line">In [15]: <span class="built_in">print</span>(a / b)</span><br><span class="line">3.75</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">In [1]: a = 100</span><br><span class="line"></span><br><span class="line">In [2]: b = 12.345</span><br><span class="line"></span><br><span class="line">In [3]: c = <span class="string">'hello world'</span></span><br><span class="line"></span><br><span class="line">In [4]: d = True</span><br><span class="line"></span><br><span class="line">In [5]: <span class="built_in">print</span>(<span class="built_in">type</span>(a))</span><br><span class="line">&lt;class <span class="string">'int'</span>&gt;</span><br><span class="line"></span><br><span class="line">In [6]: <span class="built_in">print</span>(<span class="built_in">type</span>(b))</span><br><span class="line">&lt;class <span class="string">'float'</span>&gt;</span><br><span class="line"></span><br><span class="line">In [7]: <span class="built_in">print</span>(<span class="built_in">type</span>(c))</span><br><span class="line">&lt;class <span class="string">'str'</span>&gt;</span><br><span class="line"></span><br><span class="line">In [8]: <span class="built_in">print</span>(<span class="built_in">type</span>(d))</span><br><span class="line">&lt;class <span class="string">'bool'</span>&gt;</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>int()：将一个数值或字符串转换成整数，可以指定进制</li>
+<li>float()：将一个字符串转换成浮点数</li>
+<li>str()：将指定的对象转换成字符串形式，可以指定编码</li>
+<li>chr()：将整数转换成该编码对应的字符串（一个字符）</li>
+<li>ord()：将字符串（一个字符）转换成对应的编码（整数）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">In [16]: a = 100</span><br><span class="line"></span><br><span class="line">In [17]: b = 12.345</span><br><span class="line"></span><br><span class="line">In [18]: c = <span class="string">'hello world'</span></span><br><span class="line"></span><br><span class="line">In [19]: d = True</span><br><span class="line"></span><br><span class="line">In [20]: <span class="built_in">print</span>(<span class="built_in">float</span>(a))</span><br><span class="line">100.0</span><br><span class="line"></span><br><span class="line">In [21]: <span class="built_in">print</span>(str(b))</span><br><span class="line">12.345</span><br><span class="line"></span><br><span class="line">In [22]: <span class="built_in">print</span>(bool(c))</span><br><span class="line">True</span><br><span class="line"></span><br><span class="line">In [23]: <span class="built_in">print</span>(int(d))</span><br><span class="line">1</span><br><span class="line"></span><br><span class="line">In [24]: <span class="built_in">print</span>(chr(97))</span><br><span class="line">a</span><br><span class="line"></span><br><span class="line">In [25]: <span class="built_in">print</span>(ord(<span class="string">'a'</span>))</span><br><span class="line">97</span><br></pre></td></tr></table></figure>
+
 <h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [1]: import keyword</span><br><span class="line"></span><br><span class="line">In [2]: <span class="string">', '</span>.join(keyword.kwlist)</span><br><span class="line">Out[2]: <span class="string">'False, None, True, and, as, assert, async, await, break, class, continue, def, del, elif, else, except, finally, for, from, global, if, import, in, is, lambda, nonlocal, not, or, pass, raise, return, try, while, with, yield'</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">In [3]: name = <span class="string">'lanyecheng'</span></span><br><span class="line"></span><br><span class="line">In [4]: <span class="built_in">print</span>(name)</span><br><span class="line">lanyecheng</span><br></pre></td></tr></table></figure>
@@ -602,6 +616,8 @@
 </tbody></table>
 <div class="note primary"><p>部分内容摘自于 <a href="https://www.runoob.com/python3/python3-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a> </p></div>
 
+<div class="note primary"><p>部分内容摘自于 <a href="https://github.com/jackfrued/Python-100-Days" target="_blank" rel="noopener">Python-100-Days</a> </p></div>
+
       
     </div>
     
@@ -635,8 +651,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/26/python-02/" rel="prev" title="python-02">
-                python-02 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/04/26/python-02/" rel="prev" title="Python 运算符、分支结构、循环结构">
+                Python 运算符、分支结构、循环结构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -718,7 +734,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -773,7 +789,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字"><span class="nav-number">2.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#title-upper-lower"><span class="nav-number">3.1.</span> <span class="nav-text">title&#x2F;upper&#x2F;lower</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#endswith-startswith"><span class="nav-number">3.2.</span> <span class="nav-text">endswith&#x2F;startswith</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split-rsplit"><span class="nav-number">3.3.</span> <span class="nav-text">split&#x2F;rsplit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strip-lstrip-rstrip"><span class="nav-number">3.4.</span> <span class="nav-text">strip&#x2F;lstrip&#x2F;rstrip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replace"><span class="nav-number">3.5.</span> <span class="nav-text">replace</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#partition-rpartition"><span class="nav-number">3.6.</span> <span class="nav-text">partition&#x2F;rpartition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#join"><span class="nav-number">3.7.</span> <span class="nav-text">join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#count"><span class="nav-number">3.8.</span> <span class="nav-text">count</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串拼接"><span class="nav-number">3.9.</span> <span class="nav-text">字符串拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#制表符"><span class="nav-number">3.10.</span> <span class="nav-text">制表符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#format"><span class="nav-number">3.11.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义字符串"><span class="nav-number">3.12.</span> <span class="nav-text">转义字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-string"><span class="nav-number">3.13.</span> <span class="nav-text">f-string</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值-整形"><span class="nav-number">4.1.</span> <span class="nav-text">数值 - 整形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值-浮点数"><span class="nav-number">4.2.</span> <span class="nav-text">数值 - 浮点数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Decimal"><span class="nav-number">4.3.</span> <span class="nav-text">Decimal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型转换"><span class="nav-number">4.4.</span> <span class="nav-text">类型转换</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量命名"><span class="nav-number">1.</span> <span class="nav-text">变量命名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的使用"><span class="nav-number">1.1.</span> <span class="nav-text">变量的使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字"><span class="nav-number">2.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#title-upper-lower"><span class="nav-number">3.1.</span> <span class="nav-text">title&#x2F;upper&#x2F;lower</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#endswith-startswith"><span class="nav-number">3.2.</span> <span class="nav-text">endswith&#x2F;startswith</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split-rsplit"><span class="nav-number">3.3.</span> <span class="nav-text">split&#x2F;rsplit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strip-lstrip-rstrip"><span class="nav-number">3.4.</span> <span class="nav-text">strip&#x2F;lstrip&#x2F;rstrip</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#replace"><span class="nav-number">3.5.</span> <span class="nav-text">replace</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#partition-rpartition"><span class="nav-number">3.6.</span> <span class="nav-text">partition&#x2F;rpartition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#join"><span class="nav-number">3.7.</span> <span class="nav-text">join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#count"><span class="nav-number">3.8.</span> <span class="nav-text">count</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串拼接"><span class="nav-number">3.9.</span> <span class="nav-text">字符串拼接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#制表符"><span class="nav-number">3.10.</span> <span class="nav-text">制表符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#format"><span class="nav-number">3.11.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义字符串"><span class="nav-number">3.12.</span> <span class="nav-text">转义字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#f-string"><span class="nav-number">3.13.</span> <span class="nav-text">f-string</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">4.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值-整形"><span class="nav-number">4.1.</span> <span class="nav-text">数值 - 整形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值-浮点数"><span class="nav-number">4.2.</span> <span class="nav-text">数值 - 浮点数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Decimal"><span class="nav-number">4.3.</span> <span class="nav-text">Decimal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型转换"><span class="nav-number">4.4.</span> <span class="nav-text">类型转换</span></a></li></ol></li></ol></div>
             
 
           </div>
