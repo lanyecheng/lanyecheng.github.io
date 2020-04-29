@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="记录 Python 学习过程，03内容: 函数，部分内容摘抄于网络，这里只是学习过程的摘录">
+<meta name="description" content="记录 Python 学习过程，03内容: 函数、变量作用域，部分内容摘抄于网络，这里只是学习过程的摘录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 函数">
+<meta property="og:title" content="Python 函数、变量作用域">
 <meta property="og:url" content="https://lanyecheng.github.io/2020/04/27/python-03/index.html">
 <meta property="og:site_name" content="蓝夜城__">
-<meta property="og:description" content="记录 Python 学习过程，03内容: 函数，部分内容摘抄于网络，这里只是学习过程的摘录">
+<meta property="og:description" content="记录 Python 学习过程，03内容: 函数、变量作用域，部分内容摘抄于网络，这里只是学习过程的摘录">
 <meta property="article:published_time" content="2020-04-27T13:44:05.000Z">
-<meta property="article:modified_time" content="2020-04-28T14:19:39.337Z">
+<meta property="article:modified_time" content="2020-04-29T15:13:54.962Z">
 <meta property="article:author" content="蓝夜城__">
 <meta name="twitter:card" content="summary">
 
@@ -124,7 +124,7 @@
 
 
 
-  <title>Python 函数 | 蓝夜城__</title>
+  <title>Python 函数、变量作用域 | 蓝夜城__</title>
   
 
 
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python 函数</h1>
+          <h1 class="post-title" itemprop="name headline">Python 函数、变量作用域</h1>
         
 
         <div class="post-meta">
@@ -331,8 +331,8 @@
           
             <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2020-04-28T22:19:39+08:00" content="2020-04-28">
-                2020-04-28
+              <time itemprop="dateUpdated" datetime="2020-04-29T23:13:54+08:00" content="2020-04-29">
+                2020-04-29
               </time>
             </span>
           
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  32
+                  1.6k
                 </span>
               
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  7
                 </span>
               
             </div>
@@ -418,9 +418,99 @@
       
 
       
-        <p>记录 Python 学习过程，03内容: 函数，部分内容摘抄于网络，这里只是学习过程的摘录</p>
+        <p>记录 Python 学习过程，03内容: 函数、变量作用域，部分内容摘抄于网络，这里只是学习过程的摘录</p>
 <a id="more"></a>
+<blockquote>
+<p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。函数能提高应用的模块性，和代码的重复利用率</p>
+</blockquote>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="函数格式"><a href="#函数格式" class="headerlink" title="函数格式"></a>函数格式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [1]: def hello():</span><br><span class="line">   ...:     <span class="built_in">print</span>(<span class="string">'hello world!'</span>)</span><br><span class="line">   ...:     <span class="built_in">return</span> True</span><br><span class="line">   ...:</span><br><span class="line"></span><br><span class="line">In [2]: hello()</span><br><span class="line">hello world!</span><br><span class="line">Out[2]: True</span><br></pre></td></tr></table></figure>
+<h4 id="函数参数传递"><a href="#函数参数传递" class="headerlink" title="函数参数传递"></a>函数参数传递</h4><ul>
+<li>形参：指函数定义中在内部使用的参数</li>
+<li>实参：是指调用函数时由调用者传入的参数</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [3]: def hello(name):</span><br><span class="line">   ...:     <span class="built_in">print</span>(f<span class="string">'hello &#123;name&#125;!'</span>)</span><br><span class="line">   ...:     <span class="built_in">return</span> True</span><br><span class="line">   ...:</span><br><span class="line"></span><br><span class="line">In [4]: hello(<span class="string">'yugan'</span>)</span><br><span class="line">hello yugan!</span><br><span class="line">Out[4]: True</span><br></pre></td></tr></table></figure>
 
+<h4 id="关键字函数"><a href="#关键字函数" class="headerlink" title="关键字函数"></a>关键字函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">In [5]: def hello(name=<span class="string">'World'</span>):</span><br><span class="line">   ...:     <span class="built_in">print</span>(f<span class="string">'hello &#123;name&#125;!'</span>)</span><br><span class="line">   ...:     <span class="built_in">return</span> True</span><br><span class="line">   ...:</span><br><span class="line"></span><br><span class="line">In [6]: hello()</span><br><span class="line">hello World!</span><br><span class="line">Out[6]: True</span><br><span class="line"></span><br><span class="line">In [7]: hello(<span class="string">'Tom'</span>)</span><br><span class="line">hello Tom!</span><br><span class="line">Out[7]: True</span><br></pre></td></tr></table></figure>
+
+<h4 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h4><ul>
+<li>加了星号 * 的参数会以元组(tuple)的形式导入，存放所有未命名的变量参数</li>
+<li>如果在函数调用时没有指定参数，它就是一个空元组</li>
+<li>加了两个星号 ** 的参数会以字典的形式导入</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">In [8]: def hello(*name):</span><br><span class="line">   ...:     <span class="built_in">print</span>(name)</span><br><span class="line">   ...:</span><br><span class="line"></span><br><span class="line">In [9]: hello()</span><br><span class="line">()</span><br><span class="line"></span><br><span class="line">In [10]: hello(1)</span><br><span class="line">(1,)</span><br><span class="line"></span><br><span class="line">In [11]: hello(1, 2, 3)</span><br><span class="line">(1, 2, 3)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [12]: def hello(**name):</span><br><span class="line">    ...:     <span class="built_in">print</span>(name)</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [13]: hello()</span><br><span class="line">&#123;&#125;</span><br><span class="line"></span><br><span class="line">In [14]: hello(c=1)</span><br><span class="line">&#123;<span class="string">'c'</span>: 1&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>声明函数时，参数中星号 * 可以单独出现，如果单独出现星号 * 后的参数必须用关键字传入</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">In [15]: def f(a, b, *, c):</span><br><span class="line">    ...:     <span class="built_in">return</span> a+b+c</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [16]: f(1, 2, 3)</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">TypeError                                 Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-16-1c2a18ab906a&gt; <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">----&gt; 1 f(1, 2, 3)</span><br><span class="line"></span><br><span class="line">TypeError: f() takes 2 positional arguments but 3 were given</span><br><span class="line"></span><br><span class="line">In [17]: f(1, 2, c=3)</span><br><span class="line">Out[17]: 6</span><br></pre></td></tr></table></figure>
+
+<h4 id="参数作为函数"><a href="#参数作为函数" class="headerlink" title="参数作为函数"></a>参数作为函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [18]: def hello(name):</span><br><span class="line">    ...:     <span class="built_in">print</span>(f<span class="string">'Hello &#123;name&#125;!'</span>)</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [19]: def <span class="built_in">test</span>(func, name=<span class="string">'World'</span>):</span><br><span class="line">    ...:     func(name)</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [20]: <span class="built_in">test</span>(hello)</span><br><span class="line">Hello World!</span><br><span class="line"></span><br><span class="line">In [21]: <span class="built_in">test</span>(hello, <span class="string">'wanwan'</span>)</span><br><span class="line">Hello wanwan!</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>Python 中，程序的变量并不是在哪个位置都可以访问的，访问权限决定于这个变量是在哪里赋值的。<br>变量的作用域决定了在哪一部分程序可以访问哪个特定的变量名称。Python的作用域一共有4种，分别是：</p>
+<ul>
+<li>L （Local） 局部作用域</li>
+<li>E （Enclosing） 闭包函数外的函数中</li>
+<li>G （Global） 全局作用域</li>
+<li>B （Built-in） 内建作用域</li>
+</ul>
+<blockquote>
+<p>以 L –&gt; E –&gt; G –&gt;B 的规则查找，即：在局部找不到，便会去局部外的局部找（例如闭包），再找不到就会去全局找，再者去内建中找。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [1]: x = int(2.9) <span class="comment"># 局部作用域</span></span><br><span class="line"></span><br><span class="line">In [2]: g_count = 0 <span class="comment"># 全局作用域</span></span><br><span class="line"></span><br><span class="line">In [3]: def other():</span><br><span class="line">   ...:     o_count = 1 <span class="comment"># 闭包函数外的函数中</span></span><br><span class="line">   ...:     def inner():</span><br><span class="line">   ...:         i_count = 2 <span class="comment"># 局部作用域</span></span><br><span class="line">   ...:</span><br></pre></td></tr></table></figure>
+<p>Python 中只有模块（module），类（class）以及函数（def、lambda）才会引入新的作用域，其它的代码块（如 if/elif/else/、try/except、for/while等）是不会引入新的作用域的，也就是说这些语句内定义的变量，外部也可以访问，代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实例中 msg 变量定义在 if 语句块中，但外部还是可以访问的</span></span><br><span class="line"><span class="comment"># 如果将 msg 定义在函数中，则它就是局部变量，外部不能访问</span></span><br><span class="line">In [4]: <span class="keyword">if</span> True:</span><br><span class="line">   ...:     msg = <span class="string">'lanyecheng'</span></span><br><span class="line">   ...:</span><br><span class="line"></span><br><span class="line">In [5]: msg</span><br><span class="line">Out[5]: <span class="string">'lanyecheng'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从报错的信息上看，说明了 msg_inner 未定义，无法使用，因为它是局部变量，只有在函数内可以使用</span></span><br><span class="line">In [24]: def <span class="built_in">test</span>():</span><br><span class="line">    ...:     msg_inner = <span class="string">'lanyecheng'</span></span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [25]: msg_inner</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">NameError                                 Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-25-2eb00f6e94c6&gt; <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">----&gt; 1 msg_inner</span><br><span class="line"></span><br><span class="line">NameError: name <span class="string">'msg_inner'</span> is not defined</span><br></pre></td></tr></table></figure>
+
+<p>全局变量和局部变量：</p>
+<ul>
+<li>定义在函数内部的变量拥有一个局部作用域，定义在函数外的拥有全局作用域。</li>
+<li>局部变量只能在其被声明的函数内部访问，而全局变量可以在整个程序范围内访问。</li>
+<li>调用函数时，所有在函数内声明的变量名称都将被加入到作用域中。如下实例：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">In [26]: total = 0</span><br><span class="line"></span><br><span class="line">In [27]: def sum(arg1, arg2):</span><br><span class="line">    ...:     total = arg1 + arg2</span><br><span class="line">    ...:     <span class="built_in">print</span>(f<span class="string">'函数局部变量和为：&#123;total&#125;'</span>)</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [28]: sum(11, 12)</span><br><span class="line">函数局部变量和为：23</span><br><span class="line"></span><br><span class="line">In [29]: total</span><br><span class="line">Out[29]: 0</span><br></pre></td></tr></table></figure>
+
+<p>global 和 nonlocal关键字</p>
+<ul>
+<li>当内部作用域想修改外部作用域的变量时，就要用到global和nonlocal关键字了</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">In [30]: num = 123</span><br><span class="line"></span><br><span class="line">In [31]: def fun1():</span><br><span class="line">    ...:     global num</span><br><span class="line">    ...:     <span class="built_in">print</span>(num)</span><br><span class="line">    ...:     num = 321</span><br><span class="line">    ...:     <span class="built_in">print</span>(num)</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [32]: fun1()</span><br><span class="line">123</span><br><span class="line">321</span><br><span class="line"></span><br><span class="line">In [33]: num</span><br><span class="line">Out[33]: 321</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果要修改嵌套作用域（enclosing 作用域，外层非全局作用域）中的变量则需要 nonlocal 关键字了</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">In [34]: count = 1</span><br><span class="line"></span><br><span class="line">In [35]: def fun2():</span><br><span class="line">    ...:     count = <span class="string">'fun2内部'</span></span><br><span class="line">    ...:     def b():</span><br><span class="line">    ...:         nonlocal count</span><br><span class="line">    ...:         <span class="built_in">print</span>(count)</span><br><span class="line">    ...:         count = 2</span><br><span class="line">    ...:     b()</span><br><span class="line">    ...:     <span class="built_in">print</span>(count)</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [36]: fun2()</span><br><span class="line">fun2内部</span><br><span class="line">2</span><br><span class="line"></span><br><span class="line">In [37]: count</span><br><span class="line">Out[37]: 1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">In [50]: def fun():</span><br><span class="line">    ...:     g = 2</span><br><span class="line">    ...:     def run2():</span><br><span class="line">    ...:         g = 4</span><br><span class="line">    ...:         <span class="built_in">print</span>(<span class="string">'inner ---&gt; '</span>, g)</span><br><span class="line">    ...:     run2()</span><br><span class="line">    ...:     <span class="built_in">print</span>(<span class="string">'outer ---&gt; '</span>, g)</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [51]: fun()</span><br><span class="line">inner ---&gt;  4</span><br><span class="line">outer ---&gt;  2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">In [52]: def fun():</span><br><span class="line">    ...:     g = 2</span><br><span class="line">    ...:     def run2():</span><br><span class="line">    ...:         nonlocal g</span><br><span class="line">    ...:         g = 4</span><br><span class="line">    ...:         <span class="built_in">print</span>(<span class="string">'inner ---&gt; '</span>, g)</span><br><span class="line">    ...:     run2()</span><br><span class="line">    ...:     <span class="built_in">print</span>(<span class="string">'outer ---&gt; '</span>, g)</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [53]: fun()</span><br><span class="line">inner ---&gt;  4</span><br><span class="line">outer ---&gt;  4</span><br></pre></td></tr></table></figure>
+
+<p>嵌套作用域</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">In [46]: a = 0</span><br><span class="line"></span><br><span class="line">In [47]: def run():</span><br><span class="line">    ...:     a = 2</span><br><span class="line">    ...:     def run2():</span><br><span class="line">    ...:         <span class="built_in">print</span>(a)</span><br><span class="line">    ...:     <span class="built_in">return</span> run2</span><br><span class="line">    ...:</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [48]: f = run()</span><br><span class="line"></span><br><span class="line">In [49]: f()</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>错误使用全局变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">In [38]: g = 2</span><br><span class="line"></span><br><span class="line">In [39]: def run():</span><br><span class="line">    ...:     <span class="built_in">print</span>(g)</span><br><span class="line">    ...:     g = 2</span><br><span class="line">    ...:     <span class="built_in">print</span>(g)</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [40]: run()</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">UnboundLocalError                         Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input-40-ec9775ede022&gt; <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">----&gt; 1 run()</span><br><span class="line"></span><br><span class="line">&lt;ipython-input-39-70ad5c1b5edb&gt; <span class="keyword">in</span> run()</span><br><span class="line">      1 def run():</span><br><span class="line">----&gt; 2     <span class="built_in">print</span>(g)</span><br><span class="line">      3     g = 2</span><br><span class="line">      4     <span class="built_in">print</span>(g)</span><br><span class="line">      5</span><br><span class="line"></span><br><span class="line">UnboundLocalError: <span class="built_in">local</span> variable <span class="string">'g'</span> referenced before assignment</span><br></pre></td></tr></table></figure>
+
+<p>解决办法：</p>
+<ul>
+<li>可以使用global 关键字处理解决</li>
+<li>通过函数参数传递，可以正常执行输出结果，如下所示</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [41]: g = 1</span><br><span class="line"></span><br><span class="line">In [42]: def run2(t):</span><br><span class="line">    ...:     t += 1</span><br><span class="line">    ...:     <span class="built_in">print</span>(t)</span><br><span class="line">    ...:</span><br><span class="line"></span><br><span class="line">In [43]: run2(g)</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>python 使用 lambda 来创建匿名函数。所谓匿名，意即不再使用 def 语句这样标准的形式定义一个函数。</p>
+<ul>
+<li>lambda 只是一个表达式，函数体比 def 简单很多。</li>
+<li>lambda 的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。</li>
+<li>lambda 函数拥有自己的命名空间，且不能访问自己参数列表之外或全局命名空间里的参数。</li>
+<li>虽然lambda函数看起来只能写一行，却不等同于 C 或 C++ 的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率</li>
+</ul>
+<blockquote>
+<p>lambda [arg1 [,arg2,…..argn]]:expression</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">In [54]: f = lambda n: n * 2</span><br><span class="line"></span><br><span class="line">In [55]: f(10)</span><br><span class="line">Out[55]: 20</span><br><span class="line"></span><br><span class="line">In [56]: sum = lambda arg1, arg2: arg1 + arg2</span><br><span class="line"></span><br><span class="line">In [57]: sum(3, 5)</span><br><span class="line">Out[57]: 8</span><br><span class="line"></span><br><span class="line">In [58]: b = lambda x, y, z : (x + 4) * y - z</span><br><span class="line"></span><br><span class="line">In [59]: <span class="built_in">print</span>(b(1, 2, 3))</span><br><span class="line">7</span><br></pre></td></tr></table></figure>
+
+<h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><h4 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h4><h4 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h4><h4 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a>reduce()</h4><h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><h3 id="陷阱"><a href="#陷阱" class="headerlink" title="陷阱"></a>陷阱</h3>
       
     </div>
     
@@ -504,8 +594,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -569,6 +668,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数格式"><span class="nav-number">1.1.</span> <span class="nav-text">函数格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数参数传递"><span class="nav-number">1.2.</span> <span class="nav-text">函数参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关键字函数"><span class="nav-number">1.3.</span> <span class="nav-text">关键字函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不定长参数"><span class="nav-number">1.4.</span> <span class="nav-text">不定长参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数作为函数"><span class="nav-number">1.5.</span> <span class="nav-text">参数作为函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量作用域"><span class="nav-number">2.</span> <span class="nav-text">变量作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数"><span class="nav-number">3.</span> <span class="nav-text">匿名函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高阶函数"><span class="nav-number">4.</span> <span class="nav-text">高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-number">4.1.</span> <span class="nav-text">map()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">4.2.</span> <span class="nav-text">filter()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reduce"><span class="nav-number">4.3.</span> <span class="nav-text">reduce()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用函数"><span class="nav-number">5.</span> <span class="nav-text">常用函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#陷阱"><span class="nav-number">6.</span> <span class="nav-text">陷阱</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
