@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="记录 Python 学习过程，04内容: 模块，部分内容摘抄于网络，这里只是学习过程的摘录">
+<meta name="description" content="记录 Python 学习过程，04内容: 模块和包，部分内容摘抄于网络，这里只是学习过程的摘录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 模块">
+<meta property="og:title" content="Python 模块、包">
 <meta property="og:url" content="https://lanyecheng.github.io/2020/04/29/python_04/index.html">
 <meta property="og:site_name" content="蓝夜城__">
-<meta property="og:description" content="记录 Python 学习过程，04内容: 模块，部分内容摘抄于网络，这里只是学习过程的摘录">
+<meta property="og:description" content="记录 Python 学习过程，04内容: 模块和包，部分内容摘抄于网络，这里只是学习过程的摘录">
 <meta property="article:published_time" content="2020-04-29T15:15:23.000Z">
-<meta property="article:modified_time" content="2020-05-03T03:00:42.531Z">
+<meta property="article:modified_time" content="2020-05-03T05:37:21.077Z">
 <meta property="article:author" content="蓝夜城__">
 <meta name="twitter:card" content="summary">
 
@@ -124,7 +124,7 @@
 
 
 
-  <title>Python 模块 | 蓝夜城__</title>
+  <title>Python 模块、包 | 蓝夜城__</title>
   
 
 
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python 模块</h1>
+          <h1 class="post-title" itemprop="name headline">Python 模块、包</h1>
         
 
         <div class="post-meta">
@@ -331,7 +331,7 @@
           
             <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2020-05-03T11:00:42+08:00" content="2020-05-03">
+              <time itemprop="dateUpdated" datetime="2020-05-03T13:37:21+08:00" content="2020-05-03">
                 2020-05-03
               </time>
             </span>
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  32
+                  2.1k
                 </span>
               
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  9
                 </span>
               
             </div>
@@ -418,8 +418,81 @@
       
 
       
-        <p>记录 Python 学习过程，04内容: 模块，部分内容摘抄于网络，这里只是学习过程的摘录</p>
+        <p>记录 Python 学习过程，04内容: 模块和包，部分内容摘抄于网络，这里只是学习过程的摘录</p>
 <a id="more"></a>
+<h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p>模块（Module）<br>在计算机的发展过程中，随着程序代码的越写越多，在一个文件里代码就会越来越长，越来越不容易维护<br>为了编写可维护的代码，我们把很多函数分组，分别放在不同的文件里，这样每个文件包含的代码就相对较少，很多编程语言都采用这种组织代码的方式。在一个Python中，一个.py文件就称之为一个模块（Module）</p>
+<p>使用模块有什么好处呢？最大的好处就是大大提高了代码的可维护性，其次，编写代码也不必从零开始。当一个模块编写完毕，就可以被其它地方引用，我们在编写程序的时候，也经常引用其它模块，包括Python内置的模块和来自第三方的模块，使用模块还可以避免函数名和变量名冲突。相同名字的函数和变量完全可以分别存在不同的模块中，因此我们自己在编写模块时，不必考虑名字会与其它模块冲突，但是也要注意，尽量不要与内置函数名字冲突。你也许还想到，如果不同的人编写的模块名相同怎么办，为了避免模块名冲突，Python又引入了按目录来组织模块的方法，称为包（Package）</p>
+<h3 id="标准库中模块"><a href="#标准库中模块" class="headerlink" title="标准库中模块"></a>标准库中模块</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">print(<span class="string">"当前的工作目录："</span>,os.getcwd())</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">print(<span class="string">"python 搜索模块的路径集合"</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sys.path:</span><br><span class="line">	print(i)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">当前的工作目录： C:\Users\lanye\Desktop\<span class="built_in">test</span>\C</span><br><span class="line"></span><br><span class="line">python 搜索模块的路径集合</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\C</span><br><span class="line">C:\Python37\python37.zip</span><br><span class="line">C:\Python37\DLLs</span><br><span class="line">C:\Python37\lib</span><br><span class="line">C:\Python37</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\venv</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\venv\lib\site-packages</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [11]: from time import ctime</span><br><span class="line"></span><br><span class="line">In [12]: ctime()</span><br><span class="line">Out[12]: <span class="string">'Sun May  3 12:11:45 2020'</span></span><br><span class="line"></span><br><span class="line">In [13]: import time</span><br><span class="line"></span><br><span class="line">In [14]: time.ctime()</span><br><span class="line">Out[14]: <span class="string">'Sun May  3 12:12:01 2020'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义模块调用"><a href="#自定义模块调用" class="headerlink" title="自定义模块调用"></a>自定义模块调用</h3><p>目录结构如下图</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">C:.</span><br><span class="line">└─<span class="built_in">test</span></span><br><span class="line">    │  A.py</span><br><span class="line">    │  PublicA.py</span><br><span class="line">    │  </span><br><span class="line">    ├─B</span><br><span class="line">    │  │  b1.py</span><br><span class="line">    │  │  b2.py</span><br><span class="line">    │  │  __init__.py</span><br><span class="line">    │          </span><br><span class="line">    └─C</span><br><span class="line">       |  c1.py</span><br></pre></td></tr></table></figure>
+<h4 id="同级目录调用"><a href="#同级目录调用" class="headerlink" title="同级目录调用"></a>同级目录调用</h4><p>创建一个文件夹 test ，下面定义一个公共模块 PubliaA.py </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#PublicA.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">PubA</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I'm PublicA in /test/PublicA.py"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>接下来，还是在这个目录下创建一个A.py去调用这个自定义模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A.py</span></span><br><span class="line"><span class="keyword">import</span> PublicA</span><br><span class="line">PublicA.PubA()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line">I<span class="string">'m PublicA in /test/PublicA.py</span></span><br><span class="line"><span class="string">[Finished in 0.1s]</span></span><br></pre></td></tr></table></figure>
+
+<p>运行结果打印了 PubliaA.py 里面 PubA() 方法，说明这次调用成功<br>查看目录结构，因为 PubliaA.py 和 A.py 这两个脚本都是在 test 里面，所以直接用 import 引用进来就可以了</p>
+<h4 id="同级目录下子文件调用"><a href="#同级目录下子文件调用" class="headerlink" title="同级目录下子文件调用"></a>同级目录下子文件调用</h4><p>新建一个文件夹B 里面新建一个 b1.py 和 b2.py 两个文件夹，目录入上图，内容如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># b1.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">b1_1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I am def b1_1 in /test/B/b1.py"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">b1_2</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I am def b1_2 in /test/B/b1.py"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># b2.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">b2_1</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I am def b2_1 in /test/B/b2.py"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">b2_2</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"I am def b2_2 in /test/B/b2.py"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在我们文件结构中，与 A.py 同级的有 PublicA.py 还有就是 B、C 目录了，那么对于 A.py 来说，b1、b2、c1 就是子文件了，这个时候我们想在 A.py 中调用 b1.py 中的函数，就需要把文件夹 B 作为一个模块，就是上文提到的包，我们需要在B文件夹中新建一个 __init__.py 的文件，把 B 作为一个包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A.py</span></span><br><span class="line"><span class="keyword">from</span> B <span class="keyword">import</span> b1, b2</span><br><span class="line">b1.b1_1()</span><br><span class="line">b2.b2_2()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line">I am <span class="function"><span class="keyword">def</span> <span class="title">b1_1</span> <span class="title">in</span> /<span class="title">test</span>/<span class="title">B</span>/<span class="title">b1</span>.<span class="title">py</span></span></span><br><span class="line"><span class="function"><span class="title">I</span> <span class="title">am</span> <span class="title">def</span> <span class="title">b2_2</span> <span class="title">in</span> /<span class="title">test</span>/<span class="title">B</span>/<span class="title">b2</span>.<span class="title">py</span></span></span><br><span class="line"><span class="function">[<span class="title">Finished</span> <span class="title">in</span> 0.1<span class="title">s</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p>另两种写法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A.py</span></span><br><span class="line"><span class="keyword">from</span> B.b1 <span class="keyword">import</span> *</span><br><span class="line">b1_1()</span><br><span class="line">b1_2()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line">I am <span class="function"><span class="keyword">def</span> <span class="title">b1_1</span> <span class="title">in</span> /<span class="title">test</span>/<span class="title">B</span>/<span class="title">b1</span>.<span class="title">py</span></span></span><br><span class="line"><span class="function"><span class="title">I</span> <span class="title">am</span> <span class="title">def</span> <span class="title">b1_2</span> <span class="title">in</span> /<span class="title">test</span>/<span class="title">B</span>/<span class="title">b1</span>.<span class="title">py</span></span></span><br><span class="line"><span class="function">[<span class="title">Finished</span> <span class="title">in</span> 0.1<span class="title">s</span>]</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>不建议使用 from x import * 的写法：不好跟踪、导入的变量没用被用到，提倡按需导入、命名空间污染</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A.py</span></span><br><span class="line"><span class="keyword">import</span> B.b1</span><br><span class="line">B.b1.b1_1()</span><br><span class="line">B.b1.b1_2()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line">I am <span class="function"><span class="keyword">def</span> <span class="title">b1_1</span> <span class="title">in</span> /<span class="title">test</span>/<span class="title">B</span>/<span class="title">b1</span>.<span class="title">py</span></span></span><br><span class="line"><span class="function"><span class="title">I</span> <span class="title">am</span> <span class="title">def</span> <span class="title">b1_2</span> <span class="title">in</span> /<span class="title">test</span>/<span class="title">B</span>/<span class="title">b1</span>.<span class="title">py</span></span></span><br><span class="line"><span class="function">[<span class="title">Finished</span> <span class="title">in</span> 0.1<span class="title">s</span>]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="同级目录之间的跨模块调用"><a href="#同级目录之间的跨模块调用" class="headerlink" title="同级目录之间的跨模块调用"></a>同级目录之间的跨模块调用</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">C:.</span><br><span class="line">└─<span class="built_in">test</span></span><br><span class="line">    │  A.py</span><br><span class="line">    │  PublicA.py</span><br><span class="line">    │  </span><br><span class="line">    ├─B</span><br><span class="line">    │  │  b1.py</span><br><span class="line">    │  │  b2.py</span><br><span class="line">    │  │  __init__.py</span><br><span class="line">    │          </span><br><span class="line">    └─C</span><br><span class="line">       |  c1.py</span><br></pre></td></tr></table></figure>
+<p>对于B、C来说他们是同级的，b1 和 c1 也是同级的，如果我们需要在 c1 里面调用 b1 该怎么做呢？如果像之前 A.py 调用的那样，还是会出现这个眼熟的error：ImportError: No module named B</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">2</span>]: pwd</span><br><span class="line">Out[<span class="number">2</span>]: <span class="string">'C:\\Users\\lanye\\Desktop\\test\\C'</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: <span class="keyword">from</span> B <span class="keyword">import</span> b1</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">ModuleNotFoundError                       Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input<span class="number">-3</span>-b9f9240d6aba&gt; <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">----&gt; 1 from B import b1</span><br><span class="line"></span><br><span class="line">ModuleNotFoundError: No module named <span class="string">'B'</span></span><br></pre></td></tr></table></figure>
+
+<p>导入的是 B 模块,而 B 和 c.py 文件也不是在一个目录下的了，如果需要那样调用，那么就要先回当前目录的上级目录，再开始 from B import b1 跳转目录这个操作，我们需要调用 python 的 sys 模块进行实现，<br>具体实现方法如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [4]: import sys</span><br><span class="line"></span><br><span class="line">In [5]: sys.path.append(<span class="string">'..'</span>)</span><br><span class="line"></span><br><span class="line">In [6]: from B import b1</span><br><span class="line"></span><br><span class="line">In [7]: b1.b1_1()</span><br><span class="line">I am def b1_1 <span class="keyword">in</span> /<span class="built_in">test</span>/B/b1.py</span><br></pre></td></tr></table></figure>
+<p>用 append() 方法进行追加，.. 表示回到上一级目录中去，再来看我们这个栗子，c1.py 回到上一级就是 C 这个目录了，对于 C 来说，和 B 就是同级目录，B 下面已经创建了__init__.py文件，是包可以用来引入<br>这个时候 from B  import b1 就没有问题可以顺利调用了</p>
+<p>了解到这里，关于 python 跨目录调用自定义模块的问题基本就得以解决了，实在不行，还有一个万能的方法：<br>只要在被调用文件所属的文件夹下创建好 __init__.py 文件，然后引入 sys 模块，在用 append 进行追加的时候直接写上需要调用文件的绝对路径<br>比如上面，我们要调用 B 里面的文件，只需要找到 B 的绝对路径，那 append 就这么写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"><span class="comment"># sys.path.append('..')</span></span><br><span class="line">sys.path.append(<span class="string">'C:\\Users\\lanye\\Desktop\\test'</span>)</span><br><span class="line">from B import b1</span><br><span class="line">b1.b1_1()</span><br></pre></td></tr></table></figure>
+
+<h3 id="Pycharm-和-Sublime-区别"><a href="#Pycharm-和-Sublime-区别" class="headerlink" title="Pycharm 和 Sublime 区别"></a>Pycharm 和 Sublime 区别</h3><blockquote>
+<p>Pycharm 可以正常运行，在命令行或者 Sublime 中运行 Python 文件，就报错 ModuleNotFoundError: No module named ‘x’ 等错误</p>
+</blockquote>
+<div class="note primary"><p>结论：Pycharm 在运行时会把当前工程的所有文件夹路径都作为包的搜索路径，而命令行默认只是搜索当前路径 </p></div>
+
+Sublime 运行如下
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Sublime</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">print(<span class="string">"当前的工作目录："</span>,os.getcwd())</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">print(<span class="string">"Python 搜索模块的路径集合"</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sys.path:</span><br><span class="line">	print(i)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line">当前的工作目录： C:\Users\lanye\Desktop\<span class="built_in">test</span>\C</span><br><span class="line"></span><br><span class="line">Python 搜索模块的路径集合</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\C</span><br><span class="line">C:\Python37\python37.zip</span><br><span class="line">C:\Python37\DLLs</span><br><span class="line">C:\Python37\lib</span><br><span class="line">C:\Python37</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\venv</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\venv\lib\site-packages</span><br><span class="line">[Finished <span class="keyword">in</span> 0.1s]</span><br></pre></td></tr></table></figure>
+
+命令行
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\lanye\Desktop\<span class="built_in">test</span>&gt; python .\C\c1.py</span><br><span class="line">当前的工作目录： C:\Users\lanye\Desktop\<span class="built_in">test</span></span><br><span class="line"></span><br><span class="line">Python 搜索模块的路径集合</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\C</span><br><span class="line">C:\Python37\python37.zip</span><br><span class="line">C:\Python37\DLLs</span><br><span class="line">C:\Python37\lib</span><br><span class="line">C:\Python37</span><br><span class="line">C:\Python37\lib\site-packages</span><br></pre></td></tr></table></figure>
+
+Pycharm 运行如下
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Pycharm</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">print(<span class="string">"当前的工作目录："</span>,os.getcwd())</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">print(<span class="string">"Python 搜索模块的路径集合"</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sys.path:</span><br><span class="line">	print(i)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\venv\Scripts\python.exe C:/Users/lanye/Desktop/<span class="built_in">test</span>/C/c1.py</span><br><span class="line">当前的工作目录： C:\Users\lanye\Desktop\<span class="built_in">test</span>\C</span><br><span class="line"></span><br><span class="line">Python 搜索模块的路径集合</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\C</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span></span><br><span class="line">C:\Program Files\JetBrains\PyCharm 2019.3.3\plugins\python\helpers\pycharm_display</span><br><span class="line">C:\Python37\python37.zip</span><br><span class="line">C:\Python37\DLLs</span><br><span class="line">C:\Python37\lib</span><br><span class="line">C:\Python37</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\venv</span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\venv\lib\site-packages</span><br><span class="line">C:\Program Files\JetBrains\PyCharm 2019.3.3\plugins\python\helpers\pycharm_matplotlib_backend</span><br><span class="line"></span><br><span class="line">Process finished with <span class="built_in">exit</span> code 0</span><br></pre></td></tr></table></figure>
+
+<div class="note primary"><p>对比发现 Pycharm 运行时有这个路径 C:\Users\lanye\Desktop\test </p></div>
+
+<p>所以 Pycharm 可以正常运行，在命令行或者 Sublime 中运行 Python 文件，就报错 ModuleNotFoundError: No module named ‘x’ 的错误</p>
+<p>例如在上述跨目录调用中，在 c1 里面调用 b1 ：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># c1.py</span></span><br><span class="line"><span class="keyword">from</span> B <span class="keyword">import</span> b1</span><br><span class="line">b1.b1_1()</span><br><span class="line"></span><br><span class="line"><span class="comment"># sublime 运行报错如下：</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"C:\Users\lanye\Desktop\test\C\c1.py"</span>, line <span class="number">5</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    <span class="keyword">from</span> B <span class="keyword">import</span> b1</span><br><span class="line">ModuleNotFoundError: No module named <span class="string">'B'</span></span><br></pre></td></tr></table></figure>
+
+<p>在 Pycharm 中运行 c1.py 可以成功</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># c1.py</span></span><br><span class="line"><span class="keyword">from</span> B <span class="keyword">import</span> b1</span><br><span class="line">b1.b1_1()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行结果</span></span><br><span class="line">C:\Users\lanye\Desktop\<span class="built_in">test</span>\venv\Scripts\python.exe C:/Users/lanye/Desktop/<span class="built_in">test</span>/C/c1.py</span><br><span class="line">I am def b1_1 <span class="keyword">in</span> /<span class="built_in">test</span>/B/b1.py</span><br><span class="line"></span><br><span class="line">Process finished with <span class="built_in">exit</span> code 0</span><br></pre></td></tr></table></figure>
+
+<p>具体解决办法：</p>
+<ul>
+<li>sys.path.append(‘..’)</li>
+<li>sys.path.append(‘C:\Users\lanye\Desktop\test’)</li>
+</ul>
+<div class="note primary"><p>部分内容摘自于 <a href="https://www.bookstack.cn/read/liaoxuefeng-python30/35.md" target="_blank" rel="noopener">廖雪峰 Python3 教程</a> <a href="https://blog.csdn.net/qq_32897143/article/details/79960432" target="_blank" rel="noopener">我的猪很厉害的</a>  </p></div>
+
 
       
     </div>
@@ -508,8 +581,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -573,6 +655,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标准库中模块"><span class="nav-number">2.</span> <span class="nav-text">标准库中模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义模块调用"><span class="nav-number">3.</span> <span class="nav-text">自定义模块调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同级目录调用"><span class="nav-number">3.1.</span> <span class="nav-text">同级目录调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同级目录下子文件调用"><span class="nav-number">3.2.</span> <span class="nav-text">同级目录下子文件调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同级目录之间的跨模块调用"><span class="nav-number">3.3.</span> <span class="nav-text">同级目录之间的跨模块调用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pycharm-和-Sublime-区别"><span class="nav-number">4.</span> <span class="nav-text">Pycharm 和 Sublime 区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
