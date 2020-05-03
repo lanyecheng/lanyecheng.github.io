@@ -28,7 +28,7 @@
 <meta property="og:description" content="使用 hexo 搭建 blog 记录站点配置过程，部分内容摘自网络">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-18T06:36:04.000Z">
-<meta property="article:modified_time" content="2020-05-03T08:42:59.848Z">
+<meta property="article:modified_time" content="2020-05-03T15:11:02.824Z">
 <meta property="article:author" content="蓝夜城__">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-03 16:42:59" itemprop="dateModified" datetime="2020-05-03T16:42:59+08:00">2020-05-03</time>
+                <time title="修改时间：2020-05-03 23:11:02" itemprop="dateModified" datetime="2020-05-03T23:11:02+08:00">2020-05-03</time>
               </span>
 
           
@@ -243,14 +243,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.8k</span>
+              <span>5.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -364,6 +364,25 @@
 <p>写文章的时候可以直接在文章开头设置更新时间，没有这参数的话将会显示 md 文件的修改日期</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">updated: 2018-01-01 12:00:00</span><br></pre></td></tr></table></figure>
 
+<h4 id="valine-评论"><a href="#valine-评论" class="headerlink" title="valine 评论"></a>valine 评论</h4><ul>
+<li>注册 <a href="https://valine.js.org/" target="_blank" rel="noopener">LeanCloud</a> </li>
+<li>进入控制台后点击左下角创建应用</li>
+<li>应用创建好以后，进入刚刚创建的应用，选择左下角的设置&gt;应用Key，然后就能看到你的 APP ID 和 APP Key 了</li>
+<li>点击设置 &gt; 安全中心 把自己博客网址添加到安全中心，保证数据的调用安全</li>
+<li>设置 &gt; 安全中心 ,将除了数据存储的服务全部关闭</li>
+</ul>
+<blockquote>
+<p>在主题 themes 目录下有第三方提供的主题配置文件 \themes\next_config.yml</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Valine</span></span><br><span class="line"><span class="comment"># For more information: https://valine.js.org, https://github.com/xCss/Valine</span></span><br><span class="line">valine:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  appid: 粘贴 APP ID</span><br><span class="line">  appkey: 粘贴 APP Key</span><br></pre></td></tr></table></figure>
+
+<p>创建阅读次数 Class 类，在应用里面创建名称为 Counter 的 Class，名称必须为 Counter，然后修改主题配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">leancloud_visitors:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  app_id: 粘贴 APP ID</span><br><span class="line">  app_key: 粘贴 APP Key</span><br></pre></td></tr></table></figure>
+
+<p>Valine 评论和文章阅读次数功能均基于 LeanCloud，在配置文件themes\next_config.yml中，Valine 的配置项和文章阅读次数的配置项均需要填写 LeanCloud 的id和key，即 Valine 评论和文章阅读功能不能同时为 true，只能单选一个功能</p>
+<p>即要想拥有 Valine 评论与文章阅读次数可见，设置 Valine:为true，leancloud_visitors:为false，然后修改 visitor 和comment_count 两个参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Valine</span></span><br><span class="line"><span class="comment"># For more information: https://valine.js.org, https://github.com/xCss/Valine</span></span><br><span class="line">valine:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  appid: 粘贴 APP ID</span><br><span class="line">  appkey: 粘贴 APP Key</span><br><span class="line">  notify: <span class="literal">false</span> <span class="comment"># Mail notifier</span></span><br><span class="line">  verify: <span class="literal">false</span> <span class="comment"># Verification code</span></span><br><span class="line">  placeholder: Just go go <span class="comment"># Comment box placeholder</span></span><br><span class="line">  avatar: mm <span class="comment"># Gravatar style</span></span><br><span class="line">  guest_info: nick,mail,link <span class="comment"># Custom comment header</span></span><br><span class="line">  pageSize: 10 <span class="comment"># Pagination size</span></span><br><span class="line">  language: <span class="comment"># Language, available values: en, zh-cn</span></span><br><span class="line">  visitor: <span class="literal">true</span> <span class="comment"># Article reading statistic</span></span><br><span class="line">  comment_count: <span class="literal">true</span> <span class="comment"># If false, comment count will only be displayed in post page, not in home page</span></span><br><span class="line">  recordIP: <span class="literal">false</span> <span class="comment"># Whether to record the commenter IP</span></span><br><span class="line">  serverURLs: <span class="comment"># When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span></span><br><span class="line">  <span class="comment">#post_meta_order: 0</span></span><br><span class="line"></span><br><span class="line">leancloud_visitors:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="hexo-指令"><a href="#hexo-指令" class="headerlink" title="hexo 指令"></a>hexo 指令</h3><p>hexo 常见指令说明，<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="noopener">官方地址</a></p>
 <p>init 新建一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
@@ -459,7 +478,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">1.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布到-Github-上"><span class="nav-number">2.</span> <span class="nav-text">发布到 Github 上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发表文章"><span class="nav-number">3.</span> <span class="nav-text">发表文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-主题及站点配置"><span class="nav-number">4.</span> <span class="nav-text">hexo 主题及站点配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置"><span class="nav-number">4.1.</span> <span class="nav-text">主题配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Algolia-搜索服务"><span class="nav-number">4.2.</span> <span class="nav-text">Algolia 搜索服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示字数统计，阅读时常"><span class="nav-number">4.3.</span> <span class="nav-text">显示字数统计，阅读时常</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加文章更新时间"><span class="nav-number">4.4.</span> <span class="nav-text">添加文章更新时间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-指令"><span class="nav-number">5.</span> <span class="nav-text">hexo 指令</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖软件"><span class="nav-number">1.</span> <span class="nav-text">安装依赖软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布到-Github-上"><span class="nav-number">2.</span> <span class="nav-text">发布到 Github 上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发表文章"><span class="nav-number">3.</span> <span class="nav-text">发表文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-主题及站点配置"><span class="nav-number">4.</span> <span class="nav-text">hexo 主题及站点配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置"><span class="nav-number">4.1.</span> <span class="nav-text">主题配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Algolia-搜索服务"><span class="nav-number">4.2.</span> <span class="nav-text">Algolia 搜索服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示字数统计，阅读时常"><span class="nav-number">4.3.</span> <span class="nav-text">显示字数统计，阅读时常</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加文章更新时间"><span class="nav-number">4.4.</span> <span class="nav-text">添加文章更新时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#valine-评论"><span class="nav-number">4.5.</span> <span class="nav-text">valine 评论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-指令"><span class="nav-number">5.</span> <span class="nav-text">hexo 指令</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -528,12 +547,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">27k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">24 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
